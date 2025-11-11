@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    cursor: no-drop;
+}
+
+/* 
+Nav
+ */
+
+.movies__logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #2F3D54;
+    margin-bottom: 24px;
+}
+
+.nav__links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav__link {
+    color: white;
+    font-weight: bold;
+    margin-left: 12px;
+    font-size: 14px;
+    position: relative;
+}
+
+.nav__link:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+    background-color: white;
+}
+
+.nav__link:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+/* 
+Landing Page
+*/
+
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.landing__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
+    padding: 12px 0;
+}
+
+.input__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+input {
+    background-color: #fff;
+    border: 1px solid #24242463;
+    border-radius: 20px;
+    height: 70px;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    color: #2f3d54cc;
+}
+
+button {
+    width: 200px;
+    margin-left: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #2F3D54;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 7px 7px 14px #2f3d545e;
+}
+
+.movie-theatre--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-spinner {
+    width: 100%;
+    font-size: 300px;
+    color: #2F3D54;
+    animation: spin 1000ms linear infinite;
+    
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {transform: rotate(360deg)}
+}
+
+.invisible {
+    display: none !important;
+}
+
+/* 
+Movies results
+*/
+
+.search__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-left: 16px;
+    color: #2F3D54;
+    font-weight: bold;
+    margin: 0 40px;
+}
+
+.movies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 40px;
+}
+
+.movie {
+    width: calc(100% / 3);
+    max-width: 300px;
+    padding: 12px;
+    
+}
+
+.movie__poster--wrapper {
+    width: 100%;
+    box-shadow: 0px 7px 14px #2f3d54ab;
+}
+
+.movie__title {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 16px;
+}
+
+.movie__year {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+/* 
+footer
+*/
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2F3D54;
+    margin-top: 32px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer__text {
+    color: white;
+    padding-bottom: 16px;
+    font-size: 16px;
+}
+
+.footer__logo {
+    padding: 24px;
+}
+
+@media (max-width: 768px){
+    h3 {
+        text-align: center;
+    }
+    .movie {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    }
+    .movie {
+        width: 100%;
+    }
+    .input__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+    }
+    button {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .search__text {
+        margin: 12px 0;
+    }
+    .search__title {
+        margin-top: 32px;
+    }

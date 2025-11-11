@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/6d871591ec.js" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <header>
+        <section id="landing-page">
+            <nav>
+                <figure>
+                    <img class="movies__logo" src="./assets/movie-logo.png" alt="movie-logo">
+                </figure>
+                <div class="nav__links">
+                    <a href="#" class="nav__link">Home</a>
+                    <a href="#" class="nav__link">Search Movies</a>
+                    <a href="#" class="nav__link">Contact</a>
+                </div>
+            </nav>
+           <div class="landing__content"> 
+            <h1>
+                Finding Shows and Movies For Fun
+            </h1>
+            <h3>
+                Search for Titles you're interested in.
+            </h3>
+            <div class="input__wrapper">
+            <input id='search-bar' class="search__text"  type="text" placeholder="Movie Title or Keyword" >
+            <script>
+                const searchInput = document.getElementById('search-bar');
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        searchMovie(event)
+                        }
+                    })
+
+            </script>
+            <button class="loading" onclick="searchMovie(event)">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        </div>
+        <figure class="movie-theare--wrapper">
+            <img class="movie-theatre--img" src="./assets/movie-theater-icon-trendy-flat.png" alt="movie theare">
+            <i class="fas fa-spinner invisible"></i>
+        </figure>
+        </section>
+        <section class="movies__search invisible">
+            <div class="search__title">
+                Search Results:
+            </div>
+            <div>
+            <div class="movies">
+            <div class="movie">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img">
+                </figure>
+                <div class="movie__title">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year">Released: 1977</div>
+            </div>
+            </div>
+        </section>
+    </header>
+    <footer>
+        <div class="footer__wrapper">
+        <figure class="footer__logo">
+            <img class="movies__logo" src="./assets/movie-logo.png" alt="">
+        </figure>
+        <div class="footer__text">
+            Made By Luis Martinez
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
