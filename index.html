@@ -6,21 +6,21 @@
     <title>Movie Search</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/6d871591ec.js" crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
 </head>
 <body>
     <header>
         <section id="landing-page">
-            <nav>
-                <figure>
-                    <img class="movies__logo" src="./assets/movie-logo.png" alt="movie-logo">
-                </figure>
-                <div class="nav__links">
-                    <a href="#" class="nav__link">Home</a>
-                    <a href="#" class="nav__link">Search Movies</a>
-                    <a href="#" class="nav__link">Contact</a>
-                </div>
-            </nav>
+            <div class="nav__row">
+                <nav>
+                    <figure>
+                        <img class="movies__logo" src="./assets/movie-logo.png" alt="movie-logo">
+                    </figure>
+                    <div class="nav__links">
+                        <a href="#" class="nav__link" onclick="homeRefresh()">Home</a>
+                    </div>
+                </nav>
+            </div>
            <div class="landing__content"> 
             <h1>
                 Finding Shows and Movies For Fun
@@ -40,29 +40,73 @@
 
             </script>
             <button class="loading" onclick="searchMovie(event)">
-                <i class="fa fa-search"></i>
+                <i class="fa fa-search "></i>
+                <i class="fas fa-spinner invisible"></i>
             </button>
         </div>
         </div>
-        <figure class="movie-theare--wrapper">
+        <figure class="movie-theatre--wrapper">
             <img class="movie-theatre--img" src="./assets/movie-theater-icon-trendy-flat.png" alt="movie theare">
-            <i class="fas fa-spinner invisible"></i>
+            <h1 class="error invisible">OOPS!! <br>Something went wrong. Try typing in something else.</h1>
         </figure>
         </section>
-        <section class="movies__search invisible movies__wrapper">
+        <section class="movies__search movies__wrapper invisible">
+            <div class="results__row">
+            <div class="results__header">
             <div class="search__title">
                 Search Results:
             </div>
+            <select name="" id="filter-search" onchange="filterSearch(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="HIGH_TO_LOW"><b>Year</b>: New-Old</option>
+                <option value="LOW_TO_HIGH"><b>Year</b>: Old-New</option>
+            </select>
+            </div>
             <div>
             <div class="movies">
+            <div class="movie ">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
+                </figure>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
+            </div>
             <div class="movie">
                 <figure class="movie__poster--wrapper">
-                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
                 </figure>
-                <div class="movie__title">Star Wars: Episode IV - A New Hope</div>
-                <div class="movie__year">Released: 1977</div>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
             </div>
+            <div class="movie">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
+                </figure>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
             </div>
+            <div class="movie">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
+                </figure>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
+            </div>
+            <div class="movie">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
+                </figure>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
+            </div>
+            <div class="movie">
+                <figure class="movie__poster--wrapper">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__poster--img loading__state--gray">
+                </figure>
+                <div class="movie__title loading__state--gray">Star Wars: Episode IV - A New Hope</div>
+                <div class="movie__year loading__state--gray">Released: 1977</div>
+            </div>
+            </div></div>
         </section>
     </header>
     <footer>
