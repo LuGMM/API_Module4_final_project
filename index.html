@@ -32,7 +32,7 @@
             <input id='search-bar' class="search__text"  type="text" placeholder="Movie Title or Keyword" >
             <script>
                 const searchInput = document.getElementById('search-bar');
-                searchInput.addEventListener('keydown', (e) => {
+                searchInput.addEventListener('keyup', (e) => {
                     if (e.key === 'Enter') {
                         searchMovie(event)
                         }
